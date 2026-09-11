@@ -432,30 +432,18 @@
       border-radius: 18px;
       background: rgba(255,255,255,.7);
     }
-    .deliverable-icon { display: grid; width: 40px; height: 40px; margin-bottom: 28px; place-items: center; border-radius: 12px; color: var(--paper); background: var(--ink); font-size: 16px; }
+    .deliverable-icon {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      background: var(--ink);
+    }
     .deliverable h3 { margin: 0 0 8px; font-size: 16px; }
     .deliverable p { margin: 0; color: var(--muted); font-size: 12px; }
 
-    .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: center; }
-    .cycle {
-      position: relative;
-      display: grid;
-      aspect-ratio: 1;
-      max-width: 510px;
-      place-items: center;
-      margin-inline: auto;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 50%;
-    }
-    .cycle::before, .cycle::after { position: absolute; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; content: ""; }
-    .cycle::before { inset: 14%; }
-    .cycle::after { inset: 30%; background: var(--warm); }
-    .cycle-center { z-index: 2; color: var(--ink); text-align: center; font-size: 13px; font-weight: 900; line-height: 1.4; }
-    .cycle-item { position: absolute; z-index: 3; width: 112px; padding: 11px; border-radius: 999px; color: var(--ink); background: var(--paper); text-align: center; font-size: 11px; font-weight: 850; box-shadow: 0 8px 30px rgba(0,0,0,.2); }
-    .cycle-item:nth-of-type(2) { top: 3%; left: 50%; transform: translateX(-50%); }
-    .cycle-item:nth-of-type(3) { top: 50%; right: -4%; transform: translateY(-50%); }
-    .cycle-item:nth-of-type(4) { bottom: 3%; left: 50%; transform: translateX(-50%); }
-    .cycle-item:nth-of-type(5) { top: 50%; left: -4%; transform: translateY(-50%); }
+    .method-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 720px; }
     .method-copy h2 { margin-bottom: 24px; }
     .method-copy > p { color: #bcb9af; }
     .method-points { display: grid; gap: 18px; margin-top: 30px; }
@@ -600,8 +588,6 @@
       .pillars, .deliverables { grid-template-columns: 1fr 1fr; }
       .transformation { grid-template-columns: 1fr; }
       .transform-arrow { min-height: 40px; transform: rotate(90deg); }
-      .method-grid { gap: 60px; }
-      .cycle { width: min(86vw, 480px); }
     }
 
     @media (max-width: 640px) {
@@ -625,7 +611,6 @@
       .pillar .number { margin-bottom: 34px; }
       .roadmap-card { grid-template-columns: 50px 1fr; padding: 22px; }
       .problem-statement { min-height: 360px; }
-      .cycle-item { width: 96px; font-size: 10px; }
       .profile-photo { max-width: 420px; }
       .footer-row { align-items: start; flex-direction: column; }
       .footer-copy { text-align: left; }
@@ -688,9 +673,9 @@
           <p class="eyebrow">1-to-1 AI Consulting for Executives</p>
           <h1 class="hero-title">
             <span class="title-line">
-              <span class="title-segment">AIを使う</span><span class="title-segment jp-bind">経営者から、</span>
+              <span class="title-segment">AIを使う</span><span class="title-segment jp-bind">経営者から</span>
             </span>
-            <span class="title-line"><em class="hero-accent-line">AIと働く経営者へ。</em></span>
+            <span class="title-line"><em class="hero-accent-line">AIと働く経営者へ</em></span>
           </h1>
           <p class="hero-lead">契約したAIを、検索や文章作成だけで終わらせない。あなたの経験を蓄える「第二の脳」と、仕事を理解し育っていく「AI社員」を、12回の1対1で実装します。</p>
           <div class="hero-actions">
@@ -723,11 +708,11 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">The Real Problem</p>
-          <h2><span class="heading-line"><span class="jp-bind">AIを導入しても、</span></span><span class="heading-line"><span class="jp-bind"><span class="marker">仕事の仕組み</span>は変わらない。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">AIを導入しても</span></span><span class="heading-line"><span class="jp-bind"><span class="marker">仕事の仕組み</span>は変わらない</span></span></h2>
         </div>
         <div class="problem-grid">
           <div class="problem-statement">
-            <blockquote><span class="quote-line"><span class="jp-bind">「使っている」と</span></span><span class="quote-line"><span class="jp-bind">「使いこなしている」</span></span><span class="quote-line"><span class="jp-bind">の間には、差がある。</span></span></blockquote>
+            <blockquote><span class="quote-line"><span class="jp-bind">「使っている」と「使いこなしている」</span></span><span class="quote-line"><span class="jp-bind">の間には差がある</span></span></blockquote>
             <p>必要なのは、ツールの機能説明ではなく、あなたの仕事と判断基準をAIへ接続することです。</p>
           </div>
           <div class="problem-list">
@@ -744,7 +729,7 @@
       <div class="container">
         <div class="section-head center">
           <p class="eyebrow">Three Outcomes</p>
-          <h2><span class="heading-line"><span class="jp-bind">ツールの使い方ではなく、</span></span><span class="heading-line"><span class="jp-bind">3つの<span class="marker">能力</span>を残す。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">ツールの使い方ではなく</span></span><span class="heading-line"><span class="jp-bind">3つの<span class="marker">能力</span>を残す</span></span></h2>
           <p class="section-intro">コンサル終了後も、新しい課題を自分で分解し、試作し、評価し、改善できる状態を目指します。</p>
         </div>
         <div class="pillars">
@@ -774,7 +759,7 @@
       <div class="container">
         <div class="section-head center">
           <p class="eyebrow">Before / After</p>
-          <h2><span class="heading-line"><span class="jp-bind">12回で目指す、</span></span><span class="heading-line"><span class="jp-bind">仕事との向き合い方の変化。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">12回で目指す</span></span><span class="heading-line"><span class="jp-bind">仕事との向き合い方の変化</span></span></h2>
         </div>
         <div class="transformation">
           <div class="transform-col before">
@@ -806,7 +791,7 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">12-Session Roadmap</p>
-          <h2><span class="heading-line"><span class="jp-bind">理解して終わらない。</span></span><span class="heading-line"><span class="jp-bind">すべて1対1で、</span></span><span class="heading-line"><span class="jp-bind">実装まで。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">理解して終わらない</span></span><span class="heading-line"><span class="jp-bind">すべて1対1で</span></span><span class="heading-line"><span class="jp-bind">実装まで</span></span></h2>
           <p class="section-intro">前半で個人のAI基盤を作り、後半で経営者自身の業務へ接続します。進捗を優先し、宿題が必要な場合は次回を延期できます。</p>
         </div>
         <div class="roadmap">
@@ -831,31 +816,24 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">What You Build</p>
-          <h2><span class="heading-line"><span class="jp-bind">学びではなく、</span></span><span class="heading-line"><span class="jp-bind"><span class="marker">使い続ける成果物</span>を残す。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">学びではなく</span></span><span class="heading-line"><span class="jp-bind"><span class="marker">使い続ける成果物</span>を残す</span></span></h2>
         </div>
         <div class="deliverables">
-          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true">脳</span><h3>Obsidian第二の脳</h3><p>経験・人物・事業・学び・自己・AI社員・タスクをつなぐVault。</p></article>
-          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true">↻</span><h3>振り返りの仕組み</h3><p>Daily / Weekly / Monthly Reviewと自己分析テンプレート。</p></article>
-          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true">Web</span><h3>ポートフォリオ</h3><p>自分の一次情報から作るWebサイトと自己紹介スライド。</p></article>
-          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true">&lt;/&gt;</span><h3>小さなWebアプリ</h3><p>実際の課題をテーマに、Cursorと一緒に作る動く試作品。</p></article>
-          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true">AI</span><h3>AI社員チーム</h3><p>役割別の設計書、Skill、Knowledge、Rules、育成ログ、組織図。</p></article>
-          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true">90</span><h3>業務実装と90日計画</h3><p>個別プロジェクトv2、改善前後の比較、次の90日ロードマップ。</p></article>
+          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true"></span><h3>Obsidian第二の脳</h3><p>経験・人物・事業・学び・自己・AI社員・タスクをつなぐVault。</p></article>
+          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true"></span><h3>振り返りの仕組み</h3><p>Daily / Weekly / Monthly Reviewと自己分析テンプレート。</p></article>
+          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true"></span><h3>ポートフォリオ</h3><p>自分の一次情報から作るWebサイトと自己紹介スライド。</p></article>
+          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true"></span><h3>小さなWebアプリ</h3><p>実際の課題をテーマに、Cursorと一緒に作る動く試作品。</p></article>
+          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true"></span><h3>AI社員チーム</h3><p>役割別の設計書、Skill、Knowledge、Rules、育成ログ、組織図。</p></article>
+          <article class="deliverable"><span class="deliverable-icon" aria-hidden="true"></span><h3>業務実装と90日計画</h3><p>個別プロジェクトv2、改善前後の比較、次の90日ロードマップ。</p></article>
         </div>
       </div>
     </section>
 
     <section class="section dark">
       <div class="container method-grid">
-        <div class="cycle" role="img" aria-label="制作、レビュー、学習、改善の循環">
-          <div class="cycle-center">Raikiと<br>1対1伴走</div>
-          <span class="cycle-item">01 制作する</span>
-          <span class="cycle-item">02 レビュー</span>
-          <span class="cycle-item">03 学習資産化</span>
-          <span class="cycle-item">04 改善する</span>
-        </div>
         <div class="method-copy">
           <p class="eyebrow">Build · Review · Visualize · Grow</p>
-          <h2><span class="heading-line"><span class="jp-bind">提出して終わり、</span></span><span class="heading-line"><span class="jp-bind">にはしません。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">提出して終わり</span></span><span class="heading-line"><span class="jp-bind">にはしない</span></span></h2>
           <p>毎回、成果物や実行ログを確認し、その場で具体的なフィードバックを返します。受講者が修正版を作ることで、知識ではなく再現可能な力へ変えます。</p>
           <div class="method-points">
             <div class="method-point"><span>1</span><div><strong>あなたの画面と成果物を一緒に見る</strong><small>一般論ではなく、現物をもとに次の一手を決めます。</small></div></div>
@@ -875,13 +853,13 @@
           <p class="eyebrow">Your Partner</p>
           <h2>Raiki Yamamoto</h2>
           <p class="profile-name">AI Consultant / Intex Executive Assistant</p>
-          <p>鹿児島県霧島市出身。現在はIntexで秘書を務めながら、Obsidian・Cursor・AI社員を組み合わせたAI活用を実践しています。国内外の企業関係者に、日本語・英語でAI活用セッションを実施してきました。</p>
-          <p>私が提供するのは、完成品だけを渡す代行ではありません。経営者自身の経験や判断を資産に変え、アイデアを形にし、AIを育て続けられる状態を一緒に作ります。</p>
+          <p>鹿児島県霧島市出身。Obsidian・Cursor・AI社員を組み合わせ、自分の業務をAIで改善し続けています。複数の法人・事業で、業務フローの整理から実装・改善まで伴走してきました。</p>
+          <p>完成品を渡すだけの代行ではなく、経営者自身がAIを使いこなし、日常の仕事に定着させられるところまで一緒に作ります。</p>
           <div class="proofs">
-            <div class="proof"><strong>200人+</strong><span>LinkedInを通じた異業種・異職種との対話</span></div>
-            <div class="proof"><strong>日英対応</strong><span>国内外の企業関係者向けAIセッション</span></div>
-            <div class="proof"><strong>実践者</strong><span>Obsidian・Cursor・AI社員を日常業務で運用</span></div>
-            <div class="proof"><strong>制作伴走</strong><span>Web・スライド・アプリの試作とレビュー</span></div>
+            <div class="proof"><strong>業務改善</strong><span>AIを実務に落とし込み、時間・品質・再現性を改善</span></div>
+            <div class="proof"><strong>複数社</strong><span>法人・事業ごとのAI活用と業務改善プロジェクト</span></div>
+            <div class="proof"><strong>10名以上</strong><span>経営者・役員への1対1 AIコンサル</span></div>
+            <div class="proof"><strong>数十名</strong><span>AI活用セッション・伴走支援（個別・少人数）</span></div>
           </div>
           <div class="profile-links">
             <a class="text-link" href="https://raiki-portfolio2.vercel.app/" target="_blank" rel="noopener noreferrer">ポートフォリオサイトを見る ↗</a>
@@ -895,7 +873,7 @@
       <div class="container price-wrap">
         <div class="price-copy">
           <p class="eyebrow">Investment</p>
-          <h2><span class="heading-line"><span class="jp-bind">個人の能力と、</span></span><span class="heading-line"><span class="jp-bind">事業の仕組みに投資する。</span></span></h2>
+          <h2><span class="heading-line"><span class="jp-bind">個人の能力と</span></span><span class="heading-line"><span class="jp-bind">事業の仕組みに投資する</span></span></h2>
           <p>12回で作るのは、一時的なテクニックではありません。経営者自身の経験を蓄え、制作し、AI社員と改善を続けるための仕事基盤です。</p>
           <p>まずは無料相談で、現在地と取り組みたい業務を確認します。プログラムが合わない場合は、無理におすすめしません。</p>
         </div>
@@ -953,7 +931,7 @@
     <section class="final-cta" id="consultation">
       <div class="container">
         <p class="eyebrow">Free Consultation</p>
-        <h2><span class="heading-line"><span class="jp-bind">あなたの仕事に、</span></span><span class="heading-line"><span class="jp-bind">AIが育つ場所を作りませんか。</span></span></h2>
+        <h2><span class="heading-line"><span class="jp-bind">あなたの仕事に</span></span><span class="heading-line"><span class="jp-bind">AIが育つ場所を作りませんか</span></span></h2>
         <p>無料相談では、AIの利用状況、情報の管理方法、実装したい業務を伺い、12回で目指せる状態を整理します。</p>
         <a class="button js-tally-link" href="#consultation">
           Tallyから無料相談を予約
